@@ -431,7 +431,7 @@ def find_org(org_repo, using_cached: bool = False):
 
 	org_repo = org_repo[0]
 
-	for org in ["frappe", "erpnext"]:
+	for org in ["AiBizzHub"]:
 		res = requests.head(f"https://api.github.com/repos/{org}/{org_repo}")
 		if res.status_code in (400, 403):
 			res = requests.head(f"https://github.com/{org}/{org_repo}")
@@ -442,7 +442,7 @@ def find_org(org_repo, using_cached: bool = False):
 		return "", org_repo
 
 	raise InvalidRemoteException(
-		f"{org_repo} not found under frappe or erpnext GitHub accounts"
+		f"{org_repo} not found under AiBizzHub GitHub accounts"
 	)
 
 
